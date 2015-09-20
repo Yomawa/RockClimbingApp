@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Rock Climbing</title>
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  
+  <!-- Optional theme -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+  
+  <!-- Latest compiled and minified JavaScript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+</head>
+<body>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-8 col-md-offset-2">
+        <h1 class="text-center">Wecome to our rock climbing app!</h1>
+          <table class="table table-bordered table-striped table-hover text-center">
+            <thead>
+              <th class="text-center">Routename</th>
+              <th class="text-center">State</th>
+              <th class="text-center">National Park</th>
+              <th class="text-center">Type</th> 
+              <th class="text-center">Quality</th>
+              <th class="text-center">Difficulty</th> 
+              <th class="text-center">Pitches</th> 
+              <th class="text-center">Year</th> 
+              <th class="text-center">Month</th>
+              <th class="text-center">Image</th>
+              <th class="text-center">Update</th>
+             <th class="text-center">Delete</th> 
+            </thead>
+            <tbody>
+              <% climb.forEach(function(route){ %>
+              <tr>
+                <td><a href="/climb/<%= route.id %>"><%= route.routename %></a></td>
+                <td><%= route.state %></td>
+                <td><%= route.nationalpark %></td>
+                <td><%= route.type %></td>
+                <td><%= route.quality %></td>
+                <td><%= route.difficulty %></td>
+                <td><%= route.pitches %></td>
+                <td><%= route.year %></td>
+                <td><%= route.month %></td>
+                <td><img src="<%= route.image %>" alt="image" width=200 height=200></td>
+                <!-- UPDATE BUTTON -->
+                <td><a href="/climb/<%= route.id %>/edit" class="btn btn btn-warning btn-sm">Edit</a></td>
+                <!-- DELETE BUTTON & FORM-->
+                <td>
+                <form action="/climb/<%= route.id %>?_method=delete" method="POST"><button name="button" type="submit" class="btn btn-danger btn-sm">Delete</button>
+                </form>
+                </td>
+              </tr>
+                <% }) %>
+            </tbody>
+          </table>
+          <!-- BUTTON FOR ADD COUNTRY -->
+        <a class="btn btn-primary pull-right" href="/climb/new">Add a climb!</a>
+    </div>
+  </div>
+</body>
+</html>

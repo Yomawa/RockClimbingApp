@@ -15,5 +15,13 @@
   "bugs": {
     "url": "https://github.com/Yomawa/rock_climbing_app/issues"
   },
-  "homepage": "https://github.com/Yomawa/rock_climbing_app#readme"
+  "homepage": "https://github.com/Yomawa/rock_climbing_app#readme",
+  "dependencies": {
+    "ejs": "^2.3.4",
+    "express": "^4.13.3",
+    "method-override": "^2.3.5",
+    "mongoose": "^4.1.7",
+    "morgan": "^1.6.1",
+    "request": "^2.62.0"
+  }
 }

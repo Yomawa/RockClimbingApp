@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Edit Climb</title>
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  
+  <!-- Optional theme -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+  
+  <!-- Latest compiled and minified JavaScript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+</head>
+<body class="container-fluid">
+  <h1 class="text-center">Edit a new route!</h1>
+    <form action="/climb/<%= route.id %>?_method=PUT" method="POST">
+      <div class="col-sm-4 col-sm-offset-4">
+      <!-- ROUTE NAME -->
+        <div class="form-group">
+          <label for="routename">Route Name:</label>
+          <input type="text" name="route[routename]" id="routename" class="form-control" value="<%= route.routename %>" >
+        </div>
+        <!-- ROUTE STATE -->
+        <div class="form-group">
+          <label for="state">Route State:</label>
+          <input type="text" name="route[state]" id="state" class="form-control" value="<%= route.state %>">
+        </div>
+        <!-- NATIONAL PARK -->
+        <div class="form-group">
+          <label for="nationalpark">National Park:</label>
+          <input type="text" name="route[nationalpark]" id="nationalpark" class="form-control" value="<%= route.nationalpark %>">
+        </div>
+        <!-- TYPE -->
+        <div class="form-group">
+          <label for="type">Type of climb:</label>
+          <input type="text" name="route[type]" id="type" class="form-control" value="<%= route.type %>">
+        </div>
+        <!-- QUALITY -->
+        <div class="form-group">
+          <label for="quality">Quality:</label>
+          <input type="text" name="route[quality]" id="quality" class="form-control" value="<%= route.quality %>">
+        </div>
+        <!-- DIFFICULTY -->
+        <div class="form-group">
+          <label for="difficulty">Difficulty:</label>
+          <input type="text" name="route[difficulty]" id="difficulty" class="form-control" value="<%= route.difficulty %>">
+        </div> 
+        <!-- PITCHES -->
+        <div class="form-group">
+          <label for="number">Pitches:</label>
+          <input type="text" name="route[pitches]" id="pitches" class="form-control" value="<%= route.pitches %>">
+        </div> 
+          <!-- YEAR -->
+        <div class="form-group">
+          <label for="year">Year:</label>
+          <input type="number" name="route[year]" id="year" class="form-control" value="<%= route.year %>">
+        </div>
+        <!-- MONTH -->
+        <div class="form-group">
+          <label for="month">Month:</label>
+          <input type="text" name="route[month]" id="month" class="form-control" value="<%= route.month %>">
+        </div> 
+        <!-- IMAGE -->
+        <div class="form-group">
+          <label for="image">Image:</label>
+          <input type="text" name="route[image]" id="image" class="form-control" value="<%= route.image %>">
+        </div> 
+        <!-- Submit button-->
+       <div class="form-group" class="col-xs-6">
+         <button name"button" class="btn btn-success" class="text-center">Edit</button>
+      </div>
+    </form>
+</body>
+</html>

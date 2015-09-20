@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Show</title>
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  
+  <!-- Optional theme -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+  
+  <!-- Latest compiled and minified JavaScript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+</head>
+<body>
+  <h1 class="text-center">Info about a climbing adventure</h1>
+
+  <div class="table table-bordered table-striped table-hover text-center">
+
+  <h3>RouteName: <%= route.routename %> </h3>
+  <h3>State: <%= route.state %> </h3>
+  <h3>National Park: <%= route.nationalpark %></h3>
+  <h3>Type: <%= route.type %></h3>
+  <h3>Quality: <%= route.quality %></h3>
+  <h3>Difficulty: <%= route.difficulty %></h3>
+  <h3>Pitches: <%= route.pitches %></h3>
+  <h3>Year: <%= route.year %></h3>
+  <h3>Month: <%= route.month %></h3>
+   <h3>Image: <img src="<%= route.image %>" alt="image" width=200 height=200>
+  </h3>
+  
+
+  <a href="/climb/<%= route.id %>/edit" class="btn btn btn-warning btn-sm">Edit</a>
+  </div>
+</body>
+</html>
